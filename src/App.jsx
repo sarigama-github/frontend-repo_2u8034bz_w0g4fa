@@ -1,7 +1,10 @@
 import React, { useCallback } from 'react'
 import Layout from './components/Layout'
 import Hero from './components/Hero'
+import Gallery3D from './components/Gallery3D'
 import FeaturedShop from './components/FeaturedShop'
+import Testimonials from './components/Testimonials'
+import CTA from './components/CTA'
 import AuthGate from './components/AuthGate'
 import MedicalHistoryModal from './components/MedicalHistoryModal'
 
@@ -16,7 +19,7 @@ function App() {
         <Layout onAuthed={handleAuthed}>
           {session && <MedicalHistoryModal session={session} />}
           <Hero />
-          <section id="features" className="py-16 md:py-24">
+          <section id="features" className="py-20">
             <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-6">
               {[{
                 title: 'Appointments', desc: 'Book, manage, and get real-time updates on your visits.'
@@ -33,7 +36,10 @@ function App() {
               ))}
             </div>
           </section>
+          <Gallery3D />
           <FeaturedShop />
+          <Testimonials />
+          <CTA />
         </Layout>
       )}
     </AuthGate>
